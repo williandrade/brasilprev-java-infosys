@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.StringUtils;
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy;
 import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
@@ -59,7 +58,7 @@ public class CustomPhysicalNamingStrategyUtil implements PhysicalNamingStrategy,
 
 		final String result = matcher.replaceAll(subst);
 
-		return StringUtils.upperCase(result);
+		return result.toUpperCase();
 	}
 
 	private String firstCharToLowerCase(String str) {
